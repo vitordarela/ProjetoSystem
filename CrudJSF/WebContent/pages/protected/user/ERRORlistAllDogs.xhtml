@@ -3,8 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:h="http://java.sun.com/jsf/html"
-	xmlns:ui="http://java.sun.com/jsf/facelets"
-	xmlns:p="http://primefaces.org/ui">
+	xmlns:ui="http://java.sun.com/jsf/facelets">
 <h:head>
 	<h:outputStylesheet library="css" name="main.css" />
 </h:head>
@@ -13,43 +12,43 @@
 		<h3>Bem vindo: #{userMB.user.name} || <h:commandLink action="#{userMB.logOut()}" value="#{msgs.logout}" /> </h3>
 	
 		<h:messages />
-		<p:dataTable value="#{userMB.friends}" var="amigos" styleClass="table" headerClass="tableColumnsHeader" rowClasses="tableFirstLine,tableNextLine" >
-			<p:column>
+		<h:dataTable value="#{userMB.friends}" var="amigos" styleClass="table" headerClass="tableColumnsHeader" rowClasses="tableFirstLine,tableNextLine" >
+			<h:column>
 				<f:facet name="header">
 					Nome
 				</f:facet>
 				#{amigos.name}
-			</p:column>
-			<p:column>
+			</h:column>
+			<h:column>
 				<f:facet name="header">
 					Level
 				</f:facet>
 				
 				#{amigos.status.level}
-			</p:column>
-			<p:column>
+			</h:column>
+			<h:column>
 				<f:facet name="header">
 					Elo
 				</f:facet>
 				
 				#{amigos.status.tier}
-			</p:column>
-			<p:column>
+			</h:column>
+			<h:column>
 				<f:facet name="header">
 					Mensagem
 				</f:facet>
 				
 				#{amigos.status.statusMessage}
-			</p:column>
-			<p:panelGrid columns="2">
+			</h:column>
+			<h:panelGrid columns="2">
 					<!-- Always save the id as hidden when you use a request scope MB -->
 					
-					<p:commandButton action="#{dogMB.updateDogStart()}" value="Conversar" >
+					<h:commandButton action="#{dogMB.updateDogStart()}" value="Conversar" >
 						<f:setPropertyActionListener target="#{userMB.friend}" value="#{amigos}" />
-					</p:commandButton>
-				</p:panelGrid>
+					</h:commandButton>
+				</h:panelGrid>
 
-		</p:dataTable>
+		</h:dataTable>
 		
 	</h:form>
 </h:body>

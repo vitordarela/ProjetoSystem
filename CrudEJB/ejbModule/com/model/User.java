@@ -23,6 +23,7 @@ public class User {
 	private String email;
 	private String password;
 	private String name;
+	private String login;
 	private String role;
 
 	public int getId() {
@@ -70,7 +71,16 @@ public class User {
 		return getId();
 	}
 	
-	@Override
+    public String getLogin() {
+        return login;
+    }
+
+    
+    public void setLogin(String login) {
+        this.login = login;
+    }
+
+    @Override
 	public boolean equals(Object obj) {
 		if(obj instanceof User){
 			User user = (User) obj;
